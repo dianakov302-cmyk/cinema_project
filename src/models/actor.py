@@ -1,4 +1,4 @@
-from models.person import Person
+from person import Person
 class Actor(Person):
     def __init__(self, name, age, movies = None):
         super().__init__(name, age)

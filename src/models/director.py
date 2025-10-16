@@ -1,4 +1,4 @@
-from models.person import Person
+from person import Person
 
 class Director(Person):
     def __init__(self, name, age, style):
