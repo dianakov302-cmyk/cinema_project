@@ -80,3 +80,5 @@ print(manager1.add_personnel(cashier1))
 print(manager1.add_personnel(Buffet1))
 print(manager1.show_team())
 
+
+.32053
