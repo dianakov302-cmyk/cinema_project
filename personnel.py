@@ -23,7 +23,7 @@ class cashier(Personnel):
 
     def sell_tickets(self, number):
         self.sold_tickets += number
-        return f'{self.name} продав {number} квитків. Всьго продано: {self.sold_tickets}.'
+        return f'{self.name} продав {numbe  r} квитків. Всьго продано: {self.sold_tickets}.'
 
 class Buffet(Personnel):
     def __init__(self, name, salary):
