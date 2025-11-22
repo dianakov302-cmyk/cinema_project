@@ -2,7 +2,7 @@ from actor import Actor
 from director import Director
 from genre import Genre
 
-# 🔸 Клас Movie об’єднує всі попередні — композиція (інший принцип, додатковий до ООП)
+
 class Movie:
     def __init__(self, title, year, director: Director, genre: Genre, actors=None):
         self.title = title
@@ -11,7 +11,6 @@ class Movie:
         self.genre = genre
         self.actors = actors if actors else []
 
-    # 🔸 Метод (поведінка об'єкта): додає актора у фільм
     def add_actor(self, actor: Actor):
         self.actors.append(actor)
 
