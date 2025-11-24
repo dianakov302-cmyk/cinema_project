@@ -13,7 +13,7 @@ class Personnel(ABC):
     def do_something(self):
         pass
 
-class cashier(Personnel):
+class Cashier(Personnel):
     def __init__(self, name, salary):
         super().__init__(name, 'Касир', salary)
         self.sold_tickets = 0
@@ -23,7 +23,7 @@ class cashier(Personnel):
 
     def sell_tickets(self, number):
         self.sold_tickets += number
-        return f'{self.name} продав {numbe  r} квитків. Всьго продано: {self.sold_tickets}.'
+        return f'{self.name} продав {number} квитків. Всьго продано: {self.sold_tickets}.'
 
 class Buffet(Personnel):
     def __init__(self, name, salary):
@@ -58,7 +58,7 @@ class Manager(Personnel):
         return f"{self.name} керує такими працівниками: {team}."
 
 
-cashier1 = cashier('Олег', 15000)
+cashier1 = Cashier('Олег', 15000)
 print(cashier1.info())
 print(cashier1.do_something())
 print(cashier1.sell_tickets(15))
@@ -80,5 +80,3 @@ print(manager1.add_personnel(cashier1))
 print(manager1.add_personnel(Buffet1))
 print(manager1.show_team())
 
-
-.32053

@@ -2,6 +2,10 @@ from actor import Actor
 from director import Director
 from movie import Movie
 from genre import Genre
+from personnel import Cashier, Buffet, Manager
+from student2 import Review, Seat, Hall, Session
+
+
 
 
 actor1 = Actor("Емма Стоун", 35)
@@ -46,6 +50,37 @@ print(movie2)
 print(movie3)
 print(movie4)
 print(movie5)
+
+
+
+cashier1 = Cashier('Олег', 15000)
+print(cashier1.info())
+print(cashier1.do_something())
+print(cashier1.sell_tickets(15))
+
+print()
+
+
+Buffet1 = Buffet('Ірина', 14000)
+print(Buffet1.info())
+print(Buffet1.do_something())
+print(Buffet1.sell_goods(10))
+
+print()
+
+manager1 = Manager("Світлана", 20000)
+print(manager1.info())
+print(manager1.do_something())
+print(manager1.add_personnel(cashier1))
+print(manager1.add_personnel(Buffet1))
+print(manager1.show_team())
+
+print(hall1)
+for seat in hall1.seats:
+    print(seat)
+
+print(session1)
+print(review1)
 
 
 
