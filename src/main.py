@@ -3,7 +3,14 @@ from director import Director
 from movie import Movie
 from genre import Genre
 from personnel import Cashier, Buffet, Manager
-from student2 import Review, Seat, Hall, Session
+from student2 import Hall, Seat, Session, Review
+# Імпорт класів
+from client import Client
+from booking import Booking
+from discount import Discount
+from ticket import Ticket
+
+
 
 
 
@@ -75,12 +82,97 @@ print(manager1.add_personnel(cashier1))
 print(manager1.add_personnel(Buffet1))
 print(manager1.show_team())
 
+# Імпорт класів з student2.py
+from src.student2 import Review, Seat, Hall, Session
+
+# -------------------------
+# Створення об'єктів
+# -------------------------
+# Створюємо зал
+hall1 = Hall(1, "IMAX", 5)
+hall1.add_seat(Seat(1, 1))
+hall1.add_seat(Seat(1, 2, is_vip=True))
+hall1.add_seat(Seat(1, 3))
+hall1.add_seat(Seat(1, 4))
+hall1.add_seat(Seat(1, 5, is_vip=True))
+
+# Створюємо сеанси
+session1 = Session(101, "Avatar 3", hall1, "2025-12-05 18:00", 250)
+session2 = Session(102, "Avatar 3", hall1, "2025-12-05 21:00", 300)
+
+# Створюємо відгуки
+review1 = Review("Діана", "Avatar 3", 5, "Дуже крутий фільм!")
+review2 = Review("Іван", "Avatar 3", 4, "Добре, але трохи нуднувато.")
+
+# -------------------------
+# Вивід інформації
+# -------------------------
+print("=== Зал та місця ===")
 print(hall1)
-for seat in hall1.seats:
+print("Вільні місця:")
+for seat in hall1.get_free_seats():
     print(seat)
+print()
 
+print("=== Сеанси ===")
 print(session1)
-print(review1)
+print(session2)
+print()
 
+
+
+
+print("=== Відгуки ===")
+print(review1)
+print(review2)
+# ==========================
+# Створення об'єктів
+# ==========================
+# Клієнти
+client1 = Client("Діана", "diana@example.com", "+380671234567")
+client2 = Client("Іван", "ivan@example.com", "+380671112233")
+
+# Знижки
+student_discount = Discount("Студентська", 15)
+vip_discount = Discount("VIP", 20)
+
+# Квитки
+ticket1 = Ticket("Avatar 3", "A1", 250, discount=student_discount)
+ticket2 = Ticket("Avatar 3", "A2", 250)
+ticket3 = Ticket("Avatar 3", "A3", 250, discount=vip_discount)
+
+# Бронювання
+booking1 = Booking(client1, ticket1)
+booking2 = Booking(client2, ticket2)
+booking3 = Booking(client1, ticket3)
+
+# Підтверджуємо бронювання
+booking1.confirm_booking()
+booking2.confirm_booking()
+# booking3 залишимо не підтвердженим
+
+# ==========================
+# Вивід інформації
+# ==========================
+print("=== Клієнти ===")
+print(client1)
+print(client2)
+print()
+
+print("=== Квитки ===")
+print(ticket1)
+print(ticket2)
+print(ticket3)
+print()
+
+print("=== Бронювання ===")
+print(booking1)
+print(booking2)
+print(booking3)
+print()
+
+print("=== Знижки ===")
+print(student_discount)
+print(vip_discount)
 
 
