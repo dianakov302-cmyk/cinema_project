@@ -1,14 +1,14 @@
-from actor import Actor
-from director import Director
-from movie import Movie
-from genre import Genre
+from person import Actor
+from person import Director
+from person import Movie
+from person import Genre
 from personnel import Cashier, Buffet, Manager
 from student2 import Hall, Seat, Session, Review
 # Імпорт класів
 from client import Client
-from booking import Booking
-from discount import Discount
-from ticket import Ticket
+from client import Booking
+from client import Discount
+from client import Ticket
 
 
 
